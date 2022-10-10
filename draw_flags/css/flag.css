@@ -1,0 +1,77 @@
+div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.flags{
+    align-items: center;
+    height: 100vh;
+}
+
+div .pole{
+    background-color: lightgray;
+    width: 0.5em;
+    height: 20em;
+}
+
+.pole {
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+}
+
+.flag.bel .stripe *{
+    height: 5em;
+    width: 3em;
+}
+
+.flag.nld .stripe *, .flag.lux .stripe *{
+    height: 1.8em;
+    width: 9em;
+}
+
+.horizontal{
+    flex-direction: column;
+    justify-content: unset;
+}
+
+.start, .middle, .last  {
+    box-shadow: 0.2em 0.2em .2em black;
+}
+
+.bel .start{
+    background-color: black;
+}
+
+.bel .middle{
+    background-color:#FDDA24;
+}
+
+.bel .last{
+    background-color: #EF3340;
+}
+
+.nld .start{
+    background-color: #A91F32;
+}
+
+.nld .middle{
+    background-color: white;
+}
+
+.nld .last{
+    background-color: #1E4785;
+}
+
+.lux .start{
+    background-color:#EF3340;
+}
+
+.lux .middle{
+    background-color:white;
+}
+
+.lux .last{
+    background-color:#00A3E0;
+}

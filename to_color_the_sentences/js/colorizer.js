@@ -1,19 +1,41 @@
-let form = document.getElementById("the_sentences");
-let input_form = document.getElementById("text").value;
+let button = document.getElementById("button_colorize").addEventListener("click", create_the_sentences_color);
 
-console.log(form);
-console.log(input_form);
 
-let new_span;
-let new_letter;
-let current_span;
+/**
+ * This function creates the span elements and adds a caracter inside wich them
+ */
+function create_the_sentences_color() {
 
-for (let i = 0; i < input_form.length; ++i) {
-    console.log(input_form.charAt(i));
-    new_span = document.createElement("span");
-    new_letter = document.createTextNode(input_form.charAt(i));
-    new_span.appendChild(new_letter);
+    let remove_the_elements = document.getElementById("colorized");
 
-    current_span = document.getElementById("colorized");
-    document.body.insertBefore(new_span, current_span);
+    while (remove_the_elements.firstChild) {
+        remove_the_elements.removeChild(remove_the_elements.firstChild);
+    }
+
+    let input_form = document.getElementById("text").value;
+
+    let new_span;
+    let new_lettre;
+    let current_div;
+
+    for (let i = 0; i < input_form.length; ++i) {
+
+        //create the element span
+        new_span = document.createElement("span");
+
+        //add the class
+        new_span.classList.add("color_" + (i % 3 + 1));
+
+        //take the current lettre about the word
+        new_lettre = document.createTextNode(input_form.charAt(i));
+
+        //add the lettre inside the span
+        new_span.appendChild(new_lettre);
+
+        //take the id about the div
+        current_div = document.getElementById("colorized");
+
+        //add the span inside of div
+        current_div.appendChild(new_span);
+    }
 }

@@ -7,3 +7,9 @@
 .color_3{
     color: blue;
 }
+
+#colorized{
+    text-align: center;
+    margin-top: 2em;
+    font-size: 2em;
+}

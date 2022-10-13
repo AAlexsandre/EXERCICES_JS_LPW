@@ -1,33 +1,53 @@
-let new_span;
-let new_number1;
-let new_number2;
-let new_number3;
-let current_div;
-let hours = new Date;
-let minutes = new Date;
-let seconds = new Date;
+/**
+ * This function create the digital clock
+ */
+function create_the_clock() {
+    let clock = new Date;
+    let tab_of_clock = [clock.getHours(), clock.getMinutes(), clock.getSeconds()];
 
-for (let i = 0; i < 1; ++i) {
+    let contener = document.getElementById("clock");
+    let new_span;
+    let node;
 
-    //create the element span
-    new_span = document.createElement("span");
+    let remove_the_elements = document.getElementById("clock");
 
-    //add the class
-    new_span.classList.add("color_" + (i % 3 + 1));
+    while (remove_the_elements.firstChild) {
+        remove_the_elements.removeChild(remove_the_elements.firstChild);
+    }
 
-    //take the current lettre about the word
-    new_number1 = document.createTextNode(hours.getHours());
-    new_number2 = document.createTextNode(minutes.getMinutes());
-    new_number3 = document.createTextNode(seconds.getSeconds());
+    for (let i = 0; i < tab_of_clock.length; ++i) {
+        new_span = document.createElement("span");
 
-    //add the lettre inside the span
-    new_span.appendChild(new_number1);
-    new_span.appendChild(new_number2);
-    new_span.appendChild(new_number3);
+        if (i < tab_of_clock.length - 1) {
+            node = document.createTextNode(tab_of_clock[i] + " : ");
 
-    //take the id about the div
-    current_div = document.getElementById("clock");
+            if (i == 0) {
+                if (tab_of_clock[i] < 10) {
+                    node = document.createTextNode(0 + "" + tab_of_clock[i] + " : ");
+                }
+            }
+            if (i == 1) {
+                if (tab_of_clock[i] < 10) {
+                    node = document.createTextNode(0 + "" + tab_of_clock[i] + " : ");
+                }
+            }
 
-    //add the span inside of div
-    current_div.appendChild(new_span);
+        } else {
+            node = document.createTextNode(tab_of_clock[i]);
+
+            if (i == 2) {
+                if (tab_of_clock[i] < 10) {
+                    node = document.createTextNode(0 + "" + tab_of_clock[i]);
+                }
+            }
+
+        }
+        new_span.appendChild(node);
+        contener.appendChild(new_span);
+
+
+    }
+
 }
+
+setInterval(create_the_clock, 1000);

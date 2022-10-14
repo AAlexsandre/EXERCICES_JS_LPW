@@ -1,0 +1,157 @@
+body{
+    margin-top: 4em;
+}
+
+#analogic_clock{
+    border-radius: 50%;
+    border: double black 4px;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0.2em 0.2em .2em black;
+    background-image: url("NxmAzdu.jpg");
+}
+
+.center{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 240px;
+    left: 240px;
+}
+
+/*----------HOUR----------*/
+.hour-hand-wrapper{
+    width: 200px;    
+    height: 200px;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    border-radius: 50%;
+}
+
+.hour-hand .arrow{
+    width: 4px;
+    height: 100px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: red;
+    position: absolute;
+    left: 98px;
+}
+
+.hour {
+    border-top: solid black 2px;
+    border-left: solid black 2px;
+    border-radius: 5px;
+    font-size: 30px;
+    color: black;
+    position: absolute;
+}
+
+.hour-1{
+    top: 40px;
+    right: 130px;
+}
+
+.hour-2{
+    top: 125px;
+    right: 45px;
+}
+
+.hour-3{
+    top: 235px;
+    right: 10px;
+}
+
+.hour-4{
+    top: 345px;
+    right: 45px;
+}
+
+.hour-5{
+    top: 430px;
+    right: 130px;
+}
+
+.hour-6{
+    bottom: 10px;
+    left: 240px;
+}
+
+.hour-7{
+    top: 430px;
+    left: 130px;
+}
+
+.hour-8{
+    top: 345px;
+    left: 45px;
+}
+
+.hour-9{
+    top: 235px;
+    left: 10px;
+}
+
+.hour-10{
+    top: 125px;
+    left: 45px;
+}
+
+.hour-11{
+    top: 40px;
+    left: 130px;
+}
+
+.hour-12{
+    top: 10px;
+    left: 235px;
+}
+
+/*----------HOUR----------*/
+
+/*----------MINUTE----------*/
+.minute-hand-wrapper{
+    width: 400px;    
+    height: 400px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    border-radius: 50%;
+}
+
+.minute-hand .arrow{
+    width: 4px;
+    height: 200px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: yellow;
+    position: absolute;
+    left: 198px;
+}
+/*----------MINUTE----------*/
+
+/*----------SECONDS----------*/
+.second-hand-wrapper{
+    width: 400px;    
+    height: 400px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    border-radius: 50%;
+}
+
+.second-hand .arrow{
+    width: 2px;
+    height: 200px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: green;
+    position: absolute;
+    left: 198px;
+}
+/*----------SECONDS----------*/

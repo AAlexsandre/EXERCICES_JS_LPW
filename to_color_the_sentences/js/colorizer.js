@@ -1,11 +1,10 @@
 let button = document.getElementById("button_colorize").addEventListener("click", create_the_sentences_color);
 
-
 /**
  * This function creates the span elements and adds a caracter inside wich them
  */
-function create_the_sentences_color() {
-
+function create_the_sentences_color(event) {
+    event.preventDefault();
     let remove_the_elements = document.getElementById("colorized");
 
     while (remove_the_elements.firstChild) {
@@ -17,14 +16,21 @@ function create_the_sentences_color() {
     let new_span;
     let new_lettre;
     let current_div;
+    let current_color;
+    let color_index = 0;
 
     for (let i = 0; i < input_form.length; ++i) {
 
         //create the element span
         new_span = document.createElement("span");
 
-        //add the class
-        new_span.classList.add("color_" + (i % 3 + 1));
+        if (input_form[i] != " ") {
+            current_color = "color_" + (color_index % 3 + 1);
+
+            //add the class
+            new_span.classList.add(current_color);
+            ++color_index;
+        }
 
         //take the current lettre about the word
         new_lettre = document.createTextNode(input_form.charAt(i));
@@ -37,5 +43,6 @@ function create_the_sentences_color() {
 
         //add the span inside of div
         current_div.appendChild(new_span);
+
     }
 }

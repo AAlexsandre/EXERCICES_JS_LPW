@@ -1,0 +1,24 @@
+#board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+}
+
+.white{
+    background-color: #FFF;
+}
+
+.black{
+    background-color: #000;
+}
+
+.black, .white{
+    height: 100px;
+    width: auto;
+    border: solid gray 2px;
+}
+div div {
+    color:red;
+}

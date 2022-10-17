@@ -1,9 +1,16 @@
-div{
-    margin-top: 2em;
-    text-align: center;
-    font-size: 5em;
+body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
 }
 
-span{
+#clock{
     font-family: "paysley sports";
+    font-size: 10em;
 }
+
+@font-face {
+    font-family: "paysley sports";
+    src: url('Paysley Sports.ttf') format("truetype");
+  }

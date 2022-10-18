@@ -15,10 +15,14 @@
 }
 
 .black, .white{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100px;
     width: auto;
     border: solid gray 2px;
+    font-size: 5em;
 }
 div div {
-    color:red;
+    color: gray;
 }

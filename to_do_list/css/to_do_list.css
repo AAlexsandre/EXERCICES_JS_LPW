@@ -1,0 +1,47 @@
+*{
+    font-family: "Royal AcidBath Outline";
+}
+div{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+}
+
+h1{
+    font-size: 3em;
+}
+
+input, button, span{
+    font-size: 2em;
+}
+
+button{
+    background-color: gold;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    border-bottom: solid black 2px;
+    border-right: solid black 2px;    
+    border-radius: 1em;
+}
+
+li{
+    list-style: none;
+    padding: 1em;
+}
+.delete,.modify,.done{
+    border-top: none;
+    border-left: none;
+}
+
+.delete:hover{
+    background-color: crimson;
+}
+
+.modify:hover{
+    background-color: royalblue;
+}
+
+.done:hover{
+    background-color: seagreen;
+}

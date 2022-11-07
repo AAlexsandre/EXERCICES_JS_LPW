@@ -15,8 +15,8 @@ function create_the_sentences_color(event) {
     let new_lettre;
     //take the id about the div
     let current_div = colorized_id;
-    let current_color;
-    let color_index = 0;
+    let current_colour;
+    let colour_index = 0;
 
     for (let i = 0; i < input_value.length; ++i) {
 
@@ -24,11 +24,11 @@ function create_the_sentences_color(event) {
         new_span = document.createElement("span");
 
         if (input_value.charAt(i) != " ") {
-            current_color = "color_" + (color_index % 3 + 1);
+            current_colour = "color_" + (colour_index % 3 + 1);
 
             //add the class
-            new_span.classList.add(current_color);
-            ++color_index;
+            new_span.classList.add(current_colour);
+            ++colour_index;
         }
 
         //take the current lettre about the word

@@ -11,11 +11,11 @@ recupTheData();
 let tabColor = ["white", "black"];
 let indexColor = 0;
 
-let tab_pieces = [["WHITE_KING", "♔",], ["WHITE_QUEEN", "♕"], ["WHITE_ROOK", "♖"],
-["WHITE_BISHOP", "♗"], ["WHITE_KNIGHT", "♘"], ["WHITE_PAWN", "♙"],
-["BLACK_KING", "♚"], ["BLACK_QUEEN", "♛"], ["BLACK_ROOK", "♜"],
-["BLACK_BISHOP", "♝"], ["BLACK_KNIGHT", "♞"], ["BLACK_PAWN", "♟"]
-];
+let whitePositions = [["WHITE_ROOK", "♖"], ["WHITE_KNIGHT", "♘"], ["WHITE_BISHOP", "♗"], ["WHITE_KING", "♔"], ["WHITE_QUEEN", "♕"],
+["WHITE_BISHOP", "♗"], ["WHITE_KNIGHT", "♘"], ["WHITE_ROOK", "♖"], ["WHITE_PAWN", "♙"]];
+
+let blackPositions = [["BLACK_ROOK", "♜"], ["BLACK_KNIGHT", "♞"], ["BLACK_BISHOP", "♝"], ["BLACK_KING", "♚"], ["BLACK_QUEEN", "♛"],
+["BLACK_BISHOP", "♝"], ["BLACK_KNIGHT", "♞"], ["BLACK_ROOK", "♜"], ["BLACK_PAWN", "♟"]];
 
 // 4 : to create the board
 let board = document.createElement("div");
@@ -23,7 +23,7 @@ board.setAttribute('id', 'board');
 document.body.appendChild(board);
 
 
-// 5 : To checker if the parameters are defined
+// 5 : To check if the parameters are defined
 let cell;
 
 if (boardLength == null && boardWidth == null) {
@@ -82,15 +82,17 @@ function no_chessboard(i, j) {
 function chessboard(i, j) {
     createCell(i, j);
 
-    if (i == 1) {
-        cell.textContent = tab_pieces[5][1];
-    } else if (i == 6) {
-        cell.innerText = tab_pieces[11][1];
+    if (i == 0) {
+        cell.innerText = whitePositions[j][1];
     }
-    else if (i == 0) {
-        to_place_the_pieces(i, j);
-    } else if (i == 7) {
-        to_place_the_pieces(i, j);
+    else if (i == 1) {
+        cell.textContent = whitePositions[8][1];
+
+    } else if (i == 6) {
+        cell.innerText = blackPositions[8][1];
+        
+    } else if (i == boardLength - 1) {
+        cell.innerText = blackPositions[j][1];
     }
 }
 
@@ -103,86 +105,4 @@ function createCell(i, j) {
     cell = document.createElement("div");
     cell.setAttribute('class', tabColor[(i + j) % 2]);
     board.appendChild(cell);
-}
-
-/**
- * This function is to place the white pieces
- * @param {number} j 
- */
-function to_place_the_pieces(i, j) {
-    switch (j) {
-        case 0:
-            cell.innerText = tab_pieces[2][1];
-            break;
-
-        case 1:
-            cell.innerText = tab_pieces[4][1];
-            break;
-
-        case 2:
-            cell.innerText = tab_pieces[3][1];
-            break;
-
-        case 3:
-            cell.innerText = tab_pieces[1][1];
-            break;
-
-        case 4:
-            cell.innerText = tab_pieces[0][1];
-            break;
-
-        case 5:
-            cell.innerText = tab_pieces[3][1];
-            break;
-
-        case 6:
-            cell.innerText = tab_pieces[4][1];
-            break;
-
-        case 7:
-            cell.innerText = tab_pieces[2][1];
-            break;
-
-        default:
-            console.log("vide");
-    }
-
-    if (i == boardLength - 1) {
-        switch (j) {
-            case 0:
-                cell.innerText = tab_pieces[8][1];
-                break;
-
-            case 1:
-                cell.innerText = tab_pieces[10][1];
-                break;
-
-            case 2:
-                cell.innerText = tab_pieces[9][1];
-                break;
-
-            case 3:
-                cell.innerText = tab_pieces[7][1];
-                break;
-
-            case 4:
-                cell.innerText = tab_pieces[6][1];
-                break;
-
-            case 5:
-                cell.innerText = tab_pieces[9][1];
-                break;
-
-            case 6:
-                cell.innerText = tab_pieces[10][1];
-                break;
-
-            case 7:
-                cell.innerText = tab_pieces[8][1];
-                break;
-
-            default:
-                console.log("vide");
-        }
-    }
 }

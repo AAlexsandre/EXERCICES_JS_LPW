@@ -1,7 +1,7 @@
 *{
-    font-family: "Royal AcidBath Outline";
+    font-family: "impact";
 }
-#to_do_list>div, h1{
+#toDoList>div, h1{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -44,4 +44,9 @@ li{
 
 .done:hover{
     background-color: seagreen;
+}
+
+@font-face {
+    font-family: "Royal AcidBath Outline";
+    src: url('Royal AcidBath Outline.ttf') format("truetype");
 }

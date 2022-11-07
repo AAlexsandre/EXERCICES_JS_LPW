@@ -1,7 +1,6 @@
 //To recup the data
-let input_text = document.getElementById("text");
-let to_do_list = document.getElementById("list");
-
+let inputText = document.getElementById("text");
+let toDoList = document.getElementById("list");
 
 let button = document.getElementById("button").addEventListener("click", add_to_the_list);
 
@@ -10,11 +9,11 @@ function add_to_the_list(event) {
 
     //to create the elemnts
     //1
-    let add_element_li = document.createElement("li");
-    let add_element_span = document.createElement("span");
+    let addElementLi = document.createElement("li");
+    let addElementSpan = document.createElement("span");
 
     //2
-    add_element_span.innerText = input_text.value;
+    addElementSpan.innerText = inputText.value;
 
     //3
     let delete_button = document.createElement("button");
@@ -28,28 +27,31 @@ function add_to_the_list(event) {
 
     delete_button.innerText = "Delete";
     delete_button.addEventListener("click", function () {
-        to_do_list.removeChild(add_element_li);
+        toDoList.removeChild(addElementLi);
     });
 
     modify_button.innerText = "Modify?";
     done_button.innerText = "Done";
 
     done_button.addEventListener("click", function () {
-        add_element_li.style.textDecoration = "line-through";
-        to_do_list.appendChild(add_element_li);
+        addElementLi.style.textDecoration = "line-through";
+        toDoList.appendChild(addElementLi);
         done_button.innerText = "Not done";
     });
 
     done_button.addEventListener("dblclick", function () {
-        add_element_li.style.textDecoration = "none";
+        addElementLi.style.textDecoration = "none";
         done_button.innerText = "done";
     });
 
-    add_element_li.appendChild(add_element_span);
-    add_element_li.appendChild(delete_button);
-    add_element_li.appendChild(modify_button);
-    add_element_li.appendChild(done_button);
-    to_do_list.appendChild(add_element_li);
+    addElementLi.appendChild(addElementSpan);
+    let test = document.createElement("div");
+    test.appendChild(delete_button);
+    test.appendChild(modify_button);
+    test.appendChild(done_button);
+    addElementLi.appendChild(test);
+
+    toDoList.appendChild(addElementLi);
 
     clear_the_input();
 }

@@ -1,14 +1,11 @@
 *{
-    font-family: "impact";
+    /* font-family: "impact"; */
 }
-#toDoList>div, h1{
+#toDoList{
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-}
-
-#list{
-    text-align: center;
 }
 
 h1{
@@ -22,6 +19,16 @@ input, button, span{
 button{
     background-color: gold;
     border-radius: 0.2em;
+    cursor: pointer;
+}
+
+#list li{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul{
+    width: 100%;
 }
 
 li{

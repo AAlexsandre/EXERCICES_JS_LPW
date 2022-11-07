@@ -22,7 +22,7 @@ function create_the_sentences_color(event) {
         //create the element span
         new_span = document.createElement("span");
 
-        if (input_value[i] != " ") {
+        if (input_value.charAt(i) != " ") {
             current_color = "color_" + (color_index % 3 + 1);
 
             //add the class

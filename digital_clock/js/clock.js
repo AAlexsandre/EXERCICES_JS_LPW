@@ -1,13 +1,13 @@
 /**
  * This function create the digital clock
  */
-function start_clock() {
+function startClock() {
     let clock = new Date;
-    let tab_of_clock = [clock.getHours(), clock.getMinutes(), clock.getSeconds()].map(leadingZeros);
-    document.getElementById("clock").textContent = tab_of_clock.join(":");
-    setTimeout(start_clock, 1000);
+    let tabOfClock = [clock.getHours(), clock.getMinutes(), clock.getSeconds()].map(leadingZeros);
+    document.getElementById("clock").textContent = tabOfClock.join(":");
+    setTimeout(startClock, 1000);
 }
-start_clock();
+startClock();
 
 /**
  * This function add a leading zero to a digit

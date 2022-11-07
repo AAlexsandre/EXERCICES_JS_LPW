@@ -2,7 +2,7 @@ body{
     margin-top: 4em;
 }
 
-#analogic_clock{
+#analogicClock{
     border-radius: 50%;
     border: double black 4px;
     height: 500px;
@@ -24,7 +24,7 @@ body{
 }
 
 /*----------HOUR----------*/
-.hour-hand-wrapper{
+.hourHandWrapper{
     width: 200px;    
     height: 200px;
     position: absolute;
@@ -33,7 +33,7 @@ body{
     border-radius: 50%;
 }
 
-.hour-hand .arrow{
+.hourHand .arrow{
     width: 4px;
     height: 100px;
     border-top-left-radius: 50%;
@@ -52,62 +52,62 @@ body{
     position: absolute;
 }
 
-.hour-1{
+.hour1{
     top: 40px;
     right: 130px;
 }
 
-.hour-2{
+.hour2{
     top: 125px;
     right: 45px;
 }
 
-.hour-3{
+.hour3{
     top: 235px;
     right: 10px;
 }
 
-.hour-4{
+.hour4{
     top: 345px;
     right: 45px;
 }
 
-.hour-5{
+.hour5{
     top: 430px;
     right: 130px;
 }
 
-.hour-6{
+.hour6{
     bottom: 10px;
     left: 240px;
 }
 
-.hour-7{
+.hour7{
     top: 430px;
     left: 130px;
 }
 
-.hour-8{
+.hour8{
     top: 345px;
     left: 45px;
 }
 
-.hour-9{
+.hour9{
     top: 235px;
     left: 10px;
 }
 
-.hour-10{
+.hour10{
     top: 125px;
     left: 45px;
 }
 
-.hour-11{
+.hour11{
     top: 40px;
     left: 130px;
 }
 
-.hour-12{
+.hour12{
     top: 10px;
     left: 235px;
 }
@@ -115,7 +115,7 @@ body{
 /*----------HOUR----------*/
 
 /*----------MINUTE----------*/
-.minute-hand-wrapper{
+.minuteHandWrapper{
     width: 400px;    
     height: 400px;
     position: absolute;
@@ -124,7 +124,7 @@ body{
     border-radius: 50%;
 }
 
-.minute-hand .arrow{
+.minuteHand .arrow{
     width: 4px;
     height: 200px;
     border-top-left-radius: 50%;
@@ -136,7 +136,7 @@ body{
 /*----------MINUTE----------*/
 
 /*----------SECONDS----------*/
-.second-hand-wrapper{
+.secondHandWrapper{
     width: 400px;    
     height: 400px;
     position: absolute;
@@ -145,7 +145,7 @@ body{
     border-radius: 50%;
 }
 
-.second-hand .arrow{
+.secondHand .arrow{
     width: 2px;
     height: 200px;
     border-top-left-radius: 50%;

@@ -1,15 +1,15 @@
 // 1 : to identify the data in the url
-let recup_url = window.location.href.split('?')[1];
-let queryString = new URLSearchParams(recup_url);
+let recupUrl = window.location.href.split('?')[1];
+let queryString = new URLSearchParams(recupUrl);
 
-// 2 : to give the "board_length" and "board_width" the data
-let board_length;
-let board_width;
-recup_the_data();
+// 2 : to give the "boardLength" and "boardWidth" the data
+let boardLength;
+let boardWidth;
+recupTheData();
 
 // 3 : To determinate the pieces and the colors
-let tab_color = ["white", "black"];
-let index_color = 0;
+let tabColor = ["white", "black"];
+let indexColor = 0;
 
 let tab_pieces = [["WHITE_KING", "♔",], ["WHITE_QUEEN", "♕"], ["WHITE_ROOK", "♖"],
 ["WHITE_BISHOP", "♗"], ["WHITE_KNIGHT", "♘"], ["WHITE_PAWN", "♙"],
@@ -26,23 +26,23 @@ document.body.appendChild(board);
 // 5 : To checker if the parameters are defined
 let cell;
 
-if (board_length == null && board_width == null) {
-    board_length = 8;
-    board_width = 8;
+if (boardLength == null && boardWidth == null) {
+    boardLength = 8;
+    boardWidth = 8;
 
 } else {
-    if (board_length == null) {
-        board_length = 8;
-    } else if (board_width == null) {
-        board_width = 8;
+    if (boardLength == null) {
+        boardLength = 8;
+    } else if (boardWidth == null) {
+        boardWidth = 8;
     }
 }
 
 
 // 6 : to create the cells on the board
-for (let i = 0; i < board_length; ++i) {
-    for (let j = 0; j < board_width; ++j) {
-        if (board_length != 8 || board_width != 8) {
+for (let i = 0; i < boardLength; ++i) {
+    for (let j = 0; j < boardWidth; ++j) {
+        if (boardLength != 8 || boardWidth != 8) {
             no_chessboard(i, j);
         } else {
             chessboard(i, j);
@@ -54,13 +54,13 @@ for (let i = 0; i < board_length; ++i) {
 /**
  * This function is to recup the date
  */
-function recup_the_data() {
+function recupTheData() {
     for (let pair of queryString.entries()) {
         if (pair[0] == "L") {
-            board_length = pair[1];
+            boardLength = pair[1];
 
         } else if (pair[0] == "W") {
-            board_width = pair[1];
+            boardWidth = pair[1];
         }
     }
 }
@@ -101,7 +101,7 @@ function chessboard(i, j) {
  */
 function createCell(i, j) {
     cell = document.createElement("div");
-    cell.setAttribute('class', tab_color[(i + j) % 2]);
+    cell.setAttribute('class', tabColor[(i + j) % 2]);
     board.appendChild(cell);
 }
 
@@ -147,7 +147,7 @@ function to_place_the_pieces(i, j) {
             console.log("vide");
     }
 
-    if (i == board_length - 1) {
+    if (i == boardLength - 1) {
         switch (j) {
             case 0:
                 cell.innerText = tab_pieces[8][1];

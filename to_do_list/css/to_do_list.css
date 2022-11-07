@@ -1,11 +1,14 @@
 *{
     font-family: "Royal AcidBath Outline";
 }
-div{
+#to_do_list>div, h1{
     display: flex;
-    flex-direction: column;
-    height: 100vh;
+    justify-content: space-evenly;
     align-items: center;
+}
+
+#list{
+    text-align: center;
 }
 
 h1{
@@ -18,17 +21,14 @@ input, button, span{
 
 button{
     background-color: gold;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    border-bottom: solid black 2px;
-    border-right: solid black 2px;    
-    border-radius: 1em;
+    border-radius: 0.2em;
 }
 
 li{
     list-style: none;
-    padding: 1em;
+    padding: 0.5em;
 }
+
 .delete,.modify,.done{
     border-top: none;
     border-left: none;

@@ -9,7 +9,7 @@ function create_the_sentences_color(event) {
     let remove_the_elements = colorized_id;
     cleanElement(remove_the_elements);  
 
-    let input_form = document.getElementById("text").value;
+    let input_value = document.getElementById("text").value;
 
     let new_span;
     let new_lettre;
@@ -17,12 +17,12 @@ function create_the_sentences_color(event) {
     let current_color;
     let color_index = 0;
 
-    for (let i = 0; i < input_form.length; ++i) {
+    for (let i = 0; i < input_value.length; ++i) {
 
         //create the element span
         new_span = document.createElement("span");
 
-        if (input_form[i] != " ") {
+        if (input_value[i] != " ") {
             current_color = "color_" + (color_index % 3 + 1);
 
             //add the class
@@ -31,7 +31,7 @@ function create_the_sentences_color(event) {
         }
 
         //take the current lettre about the word
-        new_lettre = document.createTextNode(input_form.charAt(i));
+        new_lettre = document.createTextNode(input_value.charAt(i));
 
         //add the lettre inside the span
         new_span.appendChild(new_lettre);

@@ -4,8 +4,9 @@ let button = document.getElementById("button_colorize").addEventListener("click"
  * This function creates the span elements and adds a caracter inside wich them
  */
 function create_the_sentences_color(event) {
+    let colorized_id = document.getElementById("colorized")
     event.preventDefault();
-    let remove_the_elements = document.getElementById("colorized");
+    let remove_the_elements = colorized_id;
 
     while (remove_the_elements.firstChild) {
         remove_the_elements.removeChild(remove_the_elements.firstChild);
@@ -39,7 +40,7 @@ function create_the_sentences_color(event) {
         new_span.appendChild(new_lettre);
 
         //take the id about the div
-        current_div = document.getElementById("colorized");
+        current_div = colorized_id;
 
         //add the span inside of div
         current_div.appendChild(new_span);

@@ -13,7 +13,8 @@ function create_the_sentences_color(event) {
 
     let new_span;
     let new_lettre;
-    let current_div;
+    //take the id about the div
+    let current_div = colorized_id;
     let current_color;
     let color_index = 0;
 
@@ -35,9 +36,6 @@ function create_the_sentences_color(event) {
 
         //add the lettre inside the span
         new_span.appendChild(new_lettre);
-
-        //take the id about the div
-        current_div = colorized_id;
 
         //add the span inside of div
         current_div.appendChild(new_span);

@@ -1,61 +1,141 @@
-//To recup the data
-let inputText = document.getElementById("text");
-let toDoList = document.getElementById("list");
+let addNewLi = document.getElementById("button").addEventListener("click", createTheLine);
+let increment = 0;
+let test = [];
 
-let button = document.getElementById("button").addEventListener("click", add_to_the_list);
+loadLocalStorageTask();
 
-function add_to_the_list(event) {
-    event.preventDefault();
+function loadLocalStorageTask() {
+    for (let i = 0; i < localStorage.length; ++i) {
+        createElements(i);
+    }
+}
+/**
+ * @return deleteButton;
+ */
+function createActionableDelete() {
+    let deleteButton = document.createElement("button");
+    deleteButton.setAttribute("class", "delete");
+    deleteButton.innerText = "Delete";
 
-    //to create the elemnts
-    //1
-    let addElementLi = document.createElement("li");
-    let addElementSpan = document.createElement("span");
-
-    //2
-    addElementSpan.innerText = inputText.value;
-
-    //3
-    let delete_button = document.createElement("button");
-    delete_button.setAttribute("class","delete");
-
-    let modify_button = document.createElement("button");
-    modify_button.setAttribute("class","modify");
-
-    let done_button = document.createElement("button");
-    done_button.setAttribute("class","done");
-
-    delete_button.innerText = "Delete";
-    delete_button.addEventListener("click", function () {
-        toDoList.removeChild(addElementLi);
+    deleteButton.addEventListener("click", function (e) {
+        localStorage.removeItem(e.target.parentNode.id);
+        e.target.parentNode.remove();
+        
     });
 
-    modify_button.innerText = "Modify?";
-    done_button.innerText = "Done";
-
-    done_button.addEventListener("click", function () {
-        addElementLi.style.textDecoration = "line-through";
-        toDoList.appendChild(addElementLi);
-        done_button.innerText = "Not done";
-    });
-
-    done_button.addEventListener("dblclick", function () {
-        addElementLi.style.textDecoration = "none";
-        done_button.innerText = "done";
-    });
-
-    addElementLi.appendChild(addElementSpan);
-    let test = document.createElement("div");
-    test.appendChild(delete_button);
-    test.appendChild(modify_button);
-    test.appendChild(done_button);
-    addElementLi.appendChild(test);
-
-    toDoList.appendChild(addElementLi);
-
-    clear_the_input();
+    return deleteButton;
 }
 
-function clear_the_input() {
+/**
+ * @return modifyButton;
+ */
+function createActionableModify() {
+    let modifyButton = document.createElement("button");
+    modifyButton.setAttribute("class", "modify");
+    modifyButton.innerText = "Modify";
+
+    modifyButton.addEventListener("click", function (e) {
+
+        //mettre la donnée dans l'input
+        loadEditForm(this.parentElement.getElementsByTagName("span")[0]);
+
+        //afficher le formulaire d'édition
+        show('editForm');
+
+        //Ajouter un actionListener sur le boutton editSubmit
+        let submit = document.getElementById('editSubmit');
+        submit.addEventListener('click', function (e) {
+            e.preventDefault();
+            updateTaskContent();
+            hide('editForm');
+        });
+    });
+
+    return modifyButton;
+}
+
+/**
+ * @return doneButton;
+ */
+function createActionableDone() {
+    let doneButton = document.createElement("button");
+    doneButton.setAttribute("class", "done");
+    doneButton.innerText = "Done";
+
+    doneButton.addEventListener("click", function () {
+        this.parentElement.style.textDecoration = "line-through";
+        document.getElementById("listDone").appendChild(this.parentElement);
+    });
+
+    return doneButton;
+}
+
+
+function loadEditForm(task) {
+    document.getElementById("editContent").value = task.textContent;
+    document.getElementById("editId").value = task.getAttribute('id');
+}
+
+
+function show(id) {
+    let form = document.getElementById(id);
+    form.style.display = "flex";
+}
+
+function hide(id) {
+    let form = document.getElementById(id);
+    form.style.display = "none";
+}
+
+
+function updateTaskContent() {
+    let content = document.getElementById('editContent').value;
+    let id = document.getElementById("editId").value;
+    // assigner l'input
+    document.getElementById(id).textContent = content;
+}
+
+function createTheLine(event) {
+    event.preventDefault();
+
+    let taskContent = document.getElementById("text").value;
+    // add task to UI
+    let newLi = document.createElement("li");
+    newLi.setAttribute("id", increment);
+
+    let newSpan = document.createElement("span");
+    newSpan.setAttribute("id", "elementNumber" + increment);
+    newSpan.innerText = taskContent;
+
+    newLi.appendChild(newSpan);
+    newLi.appendChild(createActionableDelete());
+    newLi.appendChild(createActionableModify());
+    newLi.appendChild(createActionableDone());
+
+    position = document.getElementById("listNotDone");
+    position.appendChild(newLi);
+
+    // clear The Input
     document.getElementById("text").value = "";
+
+    // add task to storage
+    localStorage.setItem(increment, taskContent);
+
+    ++increment;
+}
+
+function createElements(i){
+    let createLi = document.createElement("li");
+    let createSpan = document.createElement("span");
+
+    createLi.appendChild(createSpan);
+    createSpan.textContent = localStorage.getItem(i);
+    createSpan.setAttribute("id", "elementNumber" + increment);
+    createLi.setAttribute("id", increment);
+
+    createLi.appendChild(createActionableDelete());
+    createLi.appendChild(createActionableModify());
+    createLi.appendChild(createActionableDone());
+
+    document.getElementById("listNotDone").appendChild(createLi);
 }

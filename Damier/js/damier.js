@@ -27,24 +27,11 @@ document.body.appendChild(board);
 // 5 : Check if the parameters are defined
 let cell;
 
-/* TODO: clarifier ces boucles : 
- * si boardLength ET boardWith sont null, alors elles passent à 8
- * sinon, si boardLength est null, elle passe à 8
- * sinon si boardWidth est null, elle passe à 8
- * = 3 fois la meme boucle ?
- */
-
-if (boardLength === null && boardWidth === null) {
+if (boardLength === null) {
     boardLength = 8;
+
+} else if (boardWidth === null) {
     boardWidth = 8;
-
-} else {
-    if (boardLength === null) {
-        boardLength = 8;
-
-    } else if (boardWidth === null) {
-        boardWidth = 8;
-    }
 }
 
 
@@ -101,7 +88,7 @@ function chessboard(i, j) {
 
     } else if (i === 6) {
         cell.innerText = blackPositions[8][1];
-        
+
     } else if (i === boardLength - 1) {
         cell.innerText = blackPositions[j][1];
     }

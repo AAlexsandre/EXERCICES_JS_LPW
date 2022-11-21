@@ -37,7 +37,7 @@ if (boardWidth === '') {
 // 6 : Create the cells on the board
 for (let i = 0; i < boardLength; ++i) {
     for (let j = 0; j < boardWidth; ++j) {
-        if (boardLength != 8 && boardWidth != 8) {
+        if (boardLength != 8 || boardWidth != 8) {
             no_chessboard(i, j);
         } else {
             chessboard(i, j);

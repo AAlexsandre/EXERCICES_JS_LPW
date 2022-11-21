@@ -1,6 +1,6 @@
 // 1 : to identify the data in the url
-let dataUrl = window.location.href.split('?')[1]; // TODO: choisir une seule langue (dataUrl = francais/anglais) : fait
-let queryString = new URLSearchParams(dataUrl);
+let recupUrl = window.location.href.split('?')[1]; // TODO: choisir une seule langue (recupUrl = francais/anglais)
+let queryString = new URLSearchParams(recupUrl);
 window.history.replaceState({}, '', `${location.pathname}?L=&W=`);
 
 // 2 : to give the "boardLength" and "boardWidth" the data

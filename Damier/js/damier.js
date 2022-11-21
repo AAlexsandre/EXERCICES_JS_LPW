@@ -1,5 +1,5 @@
 // 1 : to identify the data in the url
-let urlParams = window.location.href.split('?')[1]; // TODO: choisir une seule langue (recupUrl = francais/anglais)
+let urlParams = window.location.href.split('?')[1];
 let queryString = new URLSearchParams(urlParams);
 window.history.replaceState({}, '', `${location.pathname}?L=&W=`);
 

@@ -6,7 +6,7 @@ window.history.replaceState({}, '', `${location.pathname}?L=&W=`);
 // 2 : to give the "boardLength" and "boardWidth" the data
 let boardLength;
 let boardWidth;
-recupTheData(); // TODO: choisir une seule langue (recupTheData = francais/anglais)
+fetchData();
 
 // 3 : To determinate the pieces and the colors
 let tabColor = ["white", "black"];
@@ -64,7 +64,7 @@ for (let i = 0; i < boardLength; ++i) {
 /**
  * This function is to recup the date
  */
-function recupTheData() {
+function fetchData() {
     for (let pair of queryString.entries()) { // Object.entries() renvoie un tableau des propriétés sous la forme de paires [clé, valeur]
         if (pair[0] == "L") {
             boardLength = pair[1];

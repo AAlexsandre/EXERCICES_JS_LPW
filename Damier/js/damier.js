@@ -1,11 +1,11 @@
 // 1 : to identify the data in the url
-let recupUrl = window.location.href.split('?')[1];
+let recupUrl = window.location.href.split('?')[1]; // TODO: choisir une seule langue (recupUrl = francais/anglais)
 let queryString = new URLSearchParams(recupUrl);
 
 // 2 : to give the "boardLength" and "boardWidth" the data
 let boardLength;
 let boardWidth;
-recupTheData();
+recupTheData(); // TODO: choisir une seule langue (recupTheData = francais/anglais)
 
 // 3 : To determinate the pieces and the colors
 let tabColor = ["white", "black"];
@@ -24,7 +24,15 @@ document.body.appendChild(board);
 
 
 // 5 : To check if the parameters are defined
+
 let cell;
+
+/* TODO: clarifier ces boucles : 
+ * si boardLength ET boardWith sont null, alors elles passent à 8
+ * sinon, si boardLength est null, elle passe à 8
+ * sinon si boardWidth est null, elle passe à 8
+ * = 3 fois la meme boucle ?
+ */
 
 if (boardLength == null && boardWidth == null) {
     boardLength = 8;
@@ -33,6 +41,7 @@ if (boardLength == null && boardWidth == null) {
 } else {
     if (boardLength == null) {
         boardLength = 8;
+
     } else if (boardWidth == null) {
         boardWidth = 8;
     }
@@ -55,7 +64,7 @@ for (let i = 0; i < boardLength; ++i) {
  * This function is to recup the date
  */
 function recupTheData() {
-    for (let pair of queryString.entries()) {
+    for (let pair of queryString.entries()) { // Object.entries() renvoie un tableau des propriétés sous la forme de paires [clé, valeur]
         if (pair[0] == "L") {
             boardLength = pair[1];
 
@@ -67,6 +76,7 @@ function recupTheData() {
 
 /**
  * This function calls the other function to create the cells on the board
+ * TODO: quelle autre fonction?
  * @param {number} i 
  * @param {number} j 
  */
@@ -76,6 +86,7 @@ function no_chessboard(i, j) {
 
 /**
  * This function calls the other function to create the cells and the pieces on the board 
+ * TODO: quelle autre fonction?
  * @param {number} i 
  * @param {number} j 
  */

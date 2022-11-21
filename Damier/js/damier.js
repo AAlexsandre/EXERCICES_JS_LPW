@@ -34,15 +34,15 @@ let cell;
  * = 3 fois la meme boucle ?
  */
 
-if (boardLength == null && boardWidth == null) {
+if (boardLength === null && boardWidth === null) {
     boardLength = 8;
     boardWidth = 8;
 
 } else {
-    if (boardLength == null) {
+    if (boardLength === null) {
         boardLength = 8;
 
-    } else if (boardWidth == null) {
+    } else if (boardWidth === null) {
         boardWidth = 8;
     }
 }
@@ -65,10 +65,10 @@ for (let i = 0; i < boardLength; ++i) {
  */
 function fetchData() {
     for (let pair of queryString.entries()) { // Object.entries() renvoie un tableau des propriétés sous la forme de paires [clé, valeur]
-        if (pair[0] == "L") {
+        if (pair[0] === "L") {
             boardLength = pair[1];
 
-        } else if (pair[0] == "W") {
+        } else if (pair[0] === "W") {
             boardWidth = pair[1];
         }
     }
@@ -93,16 +93,16 @@ function no_chessboard(i, j) {
 function chessboard(i, j) {
     createCell(i, j);
 
-    if (i == 0) {
+    if (i === 0) {
         cell.innerText = whitePositions[j][1];
     }
-    else if (i == 1) {
+    else if (i === 1) {
         cell.textContent = whitePositions[8][1];
 
-    } else if (i == 6) {
+    } else if (i === 6) {
         cell.innerText = blackPositions[8][1];
         
-    } else if (i == boardLength - 1) {
+    } else if (i === boardLength - 1) {
         cell.innerText = blackPositions[j][1];
     }
 }

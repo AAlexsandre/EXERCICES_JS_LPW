@@ -1,6 +1,6 @@
 // 1 : Identify the data in the url
-let urlParams = window.location.href.split('?')[1];
-let queryString = new URLSearchParams(urlParams);
+const urlParams = window.location.href.split('?')[1];
+const queryString = new URLSearchParams(urlParams);
 window.history.replaceState({}, '', `${location.pathname}?L=&W=`);
 
 // 2 : Give the "boardLength" and "boardWidth" the data
@@ -9,17 +9,17 @@ let boardWidth;
 fetchData();
 
 // 3 : Determinate the pieces and the colors
-let tabColor = ["white", "black"];
+const tabColor = ["white", "black"];
 let indexColor = 0;
 
-let whitePositions = [["WHITE_ROOK", "♖"], ["WHITE_KNIGHT", "♘"], ["WHITE_BISHOP", "♗"], ["WHITE_KING", "♔"], ["WHITE_QUEEN", "♕"],
+const whitePositions = [["WHITE_ROOK", "♖"], ["WHITE_KNIGHT", "♘"], ["WHITE_BISHOP", "♗"], ["WHITE_KING", "♔"], ["WHITE_QUEEN", "♕"],
 ["WHITE_BISHOP", "♗"], ["WHITE_KNIGHT", "♘"], ["WHITE_ROOK", "♖"], ["WHITE_PAWN", "♙"]];
 
-let blackPositions = [["BLACK_ROOK", "♜"], ["BLACK_KNIGHT", "♞"], ["BLACK_BISHOP", "♝"], ["BLACK_KING", "♚"], ["BLACK_QUEEN", "♛"],
+const blackPositions = [["BLACK_ROOK", "♜"], ["BLACK_KNIGHT", "♞"], ["BLACK_BISHOP", "♝"], ["BLACK_KING", "♚"], ["BLACK_QUEEN", "♛"],
 ["BLACK_BISHOP", "♝"], ["BLACK_KNIGHT", "♞"], ["BLACK_ROOK", "♜"], ["BLACK_PAWN", "♟"]];
 
 // 4 : Create the board
-let board = document.createElement("div");
+const board = document.createElement("div");
 board.setAttribute('id', 'board');
 document.body.appendChild(board);
 

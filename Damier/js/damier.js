@@ -27,12 +27,18 @@ document.body.appendChild(board);
 // 5 : Check if the parameters are defined
 let cell;
 
-if (boardLength === null) {
+console.log(boardLength);
+console.log(boardWidth);
+
+if (boardLength === '') {
     boardLength = 8;
 } 
-if (boardWidth === null) {
+if (boardWidth === '') {
     boardWidth = 8;
 }
+
+console.log(boardLength);
+console.log(boardWidth);
 
 
 // 6 : Create the cells on the board

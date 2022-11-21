@@ -1,14 +1,14 @@
-// 1 : to identify the data in the url
+// 1 : Identify the data in the url
 let urlParams = window.location.href.split('?')[1];
 let queryString = new URLSearchParams(urlParams);
 window.history.replaceState({}, '', `${location.pathname}?L=&W=`);
 
-// 2 : to give the "boardLength" and "boardWidth" the data
+// 2 : Give the "boardLength" and "boardWidth" the data
 let boardLength;
 let boardWidth;
 fetchData();
 
-// 3 : To determinate the pieces and the colors
+// 3 : Determinate the pieces and the colors
 let tabColor = ["white", "black"];
 let indexColor = 0;
 
@@ -18,14 +18,13 @@ let whitePositions = [["WHITE_ROOK", "♖"], ["WHITE_KNIGHT", "♘"], ["WHITE_BI
 let blackPositions = [["BLACK_ROOK", "♜"], ["BLACK_KNIGHT", "♞"], ["BLACK_BISHOP", "♝"], ["BLACK_KING", "♚"], ["BLACK_QUEEN", "♛"],
 ["BLACK_BISHOP", "♝"], ["BLACK_KNIGHT", "♞"], ["BLACK_ROOK", "♜"], ["BLACK_PAWN", "♟"]];
 
-// 4 : to create the board
+// 4 : Create the board
 let board = document.createElement("div");
 board.setAttribute('id', 'board');
 document.body.appendChild(board);
 
 
-// 5 : To check if the parameters are defined
-
+// 5 : Check if the parameters are defined
 let cell;
 
 /* TODO: clarifier ces boucles : 
@@ -49,7 +48,7 @@ if (boardLength == null && boardWidth == null) {
 }
 
 
-// 6 : to create the cells on the board
+// 6 : Create the cells on the board
 for (let i = 0; i < boardLength; ++i) {
     for (let j = 0; j < boardWidth; ++j) {
         if (boardLength != 8 || boardWidth != 8) {
@@ -62,7 +61,7 @@ for (let i = 0; i < boardLength; ++i) {
 }
 
 /**
- * This function is to recup the date
+ * This function fetch the data
  */
 function fetchData() {
     for (let pair of queryString.entries()) { // Object.entries() renvoie un tableau des propriétés sous la forme de paires [clé, valeur]

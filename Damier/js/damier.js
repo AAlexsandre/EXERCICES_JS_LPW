@@ -29,8 +29,8 @@ let cell;
 
 if (boardLength === null) {
     boardLength = 8;
-
-} else if (boardWidth === null) {
+} 
+if (boardWidth === null) {
     boardWidth = 8;
 }
 

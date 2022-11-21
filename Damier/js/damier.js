@@ -11,11 +11,14 @@ let boardWidth;
 const tabColor = ["white", "black"];
 let indexColor = 0;
 
-const whitePositions = [["WHITE_ROOK", "♖"], ["WHITE_KNIGHT", "♘"], ["WHITE_BISHOP", "♗"], ["WHITE_KING", "♔"], ["WHITE_QUEEN", "♕"],
-["WHITE_BISHOP", "♗"], ["WHITE_KNIGHT", "♘"], ["WHITE_ROOK", "♖"], ["WHITE_PAWN", "♙"]];
+// ["WHITE_ROOK", "♖"], ["WHITE_KNIGHT", "♘"], ["WHITE_BISHOP", "♗"], ["WHITE_KING", "♔"], ["WHITE_QUEEN", "♕"] 
+// ["BLACK_ROOK", "♜"], ["BLACK_KNIGHT", "♞"], ["BLACK_BISHOP", "♝"], ["BLACK_KING", "♚"], ["BLACK_QUEEN", "♛"]
 
-const blackPositions = [["BLACK_ROOK", "♜"], ["BLACK_KNIGHT", "♞"], ["BLACK_BISHOP", "♝"], ["BLACK_KING", "♚"], ["BLACK_QUEEN", "♛"],
-["BLACK_BISHOP", "♝"], ["BLACK_KNIGHT", "♞"], ["BLACK_ROOK", "♜"], ["BLACK_PAWN", "♟"]];
+const whitePositions = new Array (["♖"],["♘"],["♗"],["♔"],["♕"],["♗"],["♘"],["♖"],["♙"]);
+const blackPositions = new Array (["♜"],["♞"],["♝"],["♚"],["♛"],["♝"],["♞"],["♜"],["♟"]);
+
+console.log(whitePositions);
+console.log(blackPositions);
 
 // 4 : Create the board
 const board = document.createElement("div");
@@ -29,7 +32,7 @@ let cell;
 
 if (boardLength === '') {
     boardLength = 8;
-} 
+}
 if (boardWidth === '') {
     boardWidth = 8;
 }
@@ -82,16 +85,17 @@ function chessboard(i, j) {
     createCell(i, j);
 
     if (i === 0) {
-        cell.innerText = whitePositions[j][1];
+        cell.innerText = whitePositions[j];
     }
     else if (i === 1) {
-        cell.textContent = whitePositions[8][1];
+        cell.textContent = whitePositions[8];
 
     } else if (i === 6) {
-        cell.innerText = blackPositions[8][1];
+        cell.innerText = blackPositions[8];
 
     } else if (i === boardLength - 1) {
-        cell.innerText = blackPositions[j][1];
+        console.log(j);
+        cell.innerText = blackPositions[j];
     }
 }
 

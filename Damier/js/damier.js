@@ -27,9 +27,6 @@ document.body.appendChild(board);
 // 5 : Check if the parameters are defined
 let cell;
 
-console.log(boardLength);
-console.log(boardWidth);
-
 if (boardLength === '') {
     boardLength = 8;
 } 
@@ -37,14 +34,10 @@ if (boardWidth === '') {
     boardWidth = 8;
 }
 
-console.log(boardLength);
-console.log(boardWidth);
-
-
 // 6 : Create the cells on the board
 for (let i = 0; i < boardLength; ++i) {
     for (let j = 0; j < boardWidth; ++j) {
-        if (boardLength != 8 || boardWidth != 8) {
+        if (boardLength != 8 && boardWidth != 8) {
             no_chessboard(i, j);
         } else {
             chessboard(i, j);

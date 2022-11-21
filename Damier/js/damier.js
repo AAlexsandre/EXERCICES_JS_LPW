@@ -6,7 +6,6 @@ window.history.replaceState({}, '', `${location.pathname}?L=&W=`);
 // 2 : Give the "boardLength" and "boardWidth" the data
 let boardLength;
 let boardWidth;
-fetchData();
 
 // 3 : Determinate the pieces and the colors
 const tabColor = ["white", "black"];
@@ -23,6 +22,7 @@ const board = document.createElement("div");
 board.setAttribute('id', 'board');
 document.body.appendChild(board);
 
+fetchData();
 
 // 5 : Check if the parameters are defined
 let cell;
@@ -58,6 +58,8 @@ function fetchData() {
             boardWidth = pair[1];
         }
     }
+    board.style.gridTemplateColumns = `repeat(${boardWidth}, 1fr)`;
+    board.style.gridTemplateRows = `repeat(${boardLength}, 1fr)`;
 }
 
 /**

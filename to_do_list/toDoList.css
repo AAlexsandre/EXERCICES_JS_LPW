@@ -1,0 +1,24 @@
+#modal {
+    display: none; /* hide the modal by default */
+    position: fixed; /* position it in the center of the screen */
+    z-index: 1; /* ensure it is on top of other elements */
+    left: 0;
+    top: 0;
+    width: 100%; /* full width */
+    height: 100%; /* full height */
+    overflow: auto; /* enable scrolling */
+    background-color: rgba(0,0,0,0.4); /* make it semi-transparent */
+}
+#modal-content {
+    background-color: white;
+    margin: 15% auto; /* center the modal */
+    padding: 20px;
+    width: 80%; /* modal width */
+}
+#close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}

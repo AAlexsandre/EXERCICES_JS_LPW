@@ -46,7 +46,8 @@ li button:hover {
 }
 
 
-li div, li button {
+li div,
+li button {
     font-weight: bold;
 }
 
@@ -57,7 +58,7 @@ li div {
     border-bottom: solid black 1px;
 }
 
-li button{
+li button {
     margin: 0 0.5em 1em 0.5em;
 }
 
@@ -90,6 +91,22 @@ li {
     border-radius: 0.3em;
     box-shadow: 5px 5px 5px 0 rgb(0 0 0 / 30%);
     text-align: center;
+
+}
+
+li div {
+    display: flex;
+    justify-content: space-around;
+}
+
+li div img:nth-child(1),
+li div img:nth-child(3) {
+    width: 30px;
+    height: 30px;
+}
+li div img:nth-child(3) {
+
+    transform: scaleX(-1);
 }
 
 #div-box {
@@ -129,6 +146,6 @@ label {
     border-bottom: black solid 2px;
 }
 
-#tasksDone{
+#tasksDone {
     text-decoration: line-through;
 }

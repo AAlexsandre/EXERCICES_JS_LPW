@@ -111,8 +111,9 @@ function changeContent(modifyButton){
         let inputModify = document.getElementById("task-modify");
         let task = this.parentElement.firstChild.textContent;
         inputModify.value = task;
-        currentTask = this.parentElement.firstChild;
-        toggle(modal);
+        currentTask = this.parentElement.firstChild.children[1];
+        // toggle(modal);
+        modal.style.display = "block";
     });
 
     document.getElementById("save-modify").addEventListener("click", function () {
@@ -123,11 +124,13 @@ function changeContent(modifyButton){
         tasks[index] = task;
         localStorage.setItem("tasks", JSON.stringify(tasks));
         currentTask.textContent = task;
-        toggle(modal);
+        // toggle(modal);
+        modal.style.display = "none";
     });
 
     document.getElementById("close-modal").addEventListener("click", function () {
-        toggle(modal);
+        // toggle(modal);
+        modal.style.display = "none";
     });
 }
 
@@ -166,13 +169,14 @@ function done(doneButton){
     });
 }
 
-function toggle(element) {
-    if (element.style.display === "none") {
-        element.style.display = "block";
-    } else {
-        element.style.display = "none";
-    }
-}
+// function toggle(element) {
+//     console.log(element.style.display);
+//     if (element.style.display === "none") {
+//         element.style.display = "block";
+//     } else {
+//         element.style.display = "none";
+//     }
+// }
 
 
 window.addEventListener("load", displayTasks);

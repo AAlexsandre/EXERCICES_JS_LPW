@@ -81,6 +81,18 @@ ul {
     grid-template-columns: repeat(3, 1fr);
 }
 
+@media(max-width:800px){
+    ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:540px){
+    ul {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
 li {
     /* width: 33,33vh; */
     list-style: none;

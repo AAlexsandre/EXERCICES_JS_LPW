@@ -112,7 +112,6 @@ function changeContent(modifyButton){
         let task = this.parentElement.firstChild.textContent;
         inputModify.value = task;
         currentTask = this.parentElement.firstChild.children[1];
-        // toggle(modal);
         modal.style.display = "block";
     });
 
@@ -124,12 +123,10 @@ function changeContent(modifyButton){
         tasks[index] = task;
         localStorage.setItem("tasks", JSON.stringify(tasks));
         currentTask.textContent = task;
-        // toggle(modal);
         modal.style.display = "none";
     });
 
     document.getElementById("close-modal").addEventListener("click", function () {
-        // toggle(modal);
         modal.style.display = "none";
     });
 }
@@ -168,16 +165,6 @@ function done(doneButton){
 
     });
 }
-
-// function toggle(element) {
-//     console.log(element.style.display);
-//     if (element.style.display === "none") {
-//         element.style.display = "block";
-//     } else {
-//         element.style.display = "none";
-//     }
-// }
-
 
 window.addEventListener("load", displayTasks);
 

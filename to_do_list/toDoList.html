@@ -7,39 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="toDoList.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 </head>
 
 <body>
-    <div>
+    <div id="div-box">
         <div>
-            <form>
-                <div class="form-group">
-                    <label for="task">Task:</label>
-                    <input type="text" class="form-control" id="task">
+            <div id="div-form">
+                <form>
+                    <div>
+                        <label for="task">Task:</label>
+                        <input type="text" id="task">
+                    </div>
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+            <div>
+                <h2>To Do</h2>
+                <ul id="tasks">
+                </ul>
+
+                <h2>Done</h2>
+                <ul id="tasksDone">
+                </ul>
+            </div>
+            <div id="modal">
+                <div id="modal-content">
+                    <span id="close-modal">&times;</span>
+                    <label for="task-modify">Modify task:</label>
+                    <input type="text" id="task-modify">
+                    <button id="save-modify">Save</button>
                 </div>
-                <button type="submit" class="btn btn-primary">Add</button>
-            </form>
-
-        </div>
-        <div>
-            <h2>To Do</h2>
-            <ul class="list-group" id="tasks">
-                <!-- Your task list goes here -->
-            </ul>
-
-            <h2>Done</h2>
-            <ul id="tasksDone">
-            </ul>
-        </div>
-        <div id="modal">
-            <div id="modal-content">
-                <span id="close-modal">&times;</span>
-                <label for="task-modify">Modify task:</label>
-                <input type="text" id="task-modify">
-                <button id="save-modify">Save</button>
             </div>
         </div>
     </div>

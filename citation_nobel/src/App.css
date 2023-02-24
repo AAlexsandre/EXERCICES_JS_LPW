@@ -77,3 +77,35 @@ button{
 button:hover{
   background-color: lightgreen;
 }
+
+
+select{
+  margin-top: 1em;
+  padding: 0.5em;
+  background-color: lightslategrey;
+}
+
+select, option{
+  color: white;
+  font-size: large;
+}
+
+.Physics {
+  background-color: gray;
+}
+
+.Peace {
+  background-color: green;
+}
+
+.Physiology {
+  background-color: lightblue;
+}
+
+.Literature {
+  background-color: burlywood;
+}
+
+.Chemistry {
+  background-color: yellowgreen;
+}

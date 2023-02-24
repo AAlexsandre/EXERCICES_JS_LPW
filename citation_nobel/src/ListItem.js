@@ -1,6 +1,6 @@
-const ListItem = ({nobel: {category, name, year}}) => {
+const ListItem = ({nobel: {category}}) => {
     return (
-        <li className={category}>{name} ({year})</li>
+        <option className={category}>{category}</option>
     );
 }
 

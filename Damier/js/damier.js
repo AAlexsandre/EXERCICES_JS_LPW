@@ -10,7 +10,6 @@ recupTheData(); // TODO: choisir une seule langue (recupTheData = francais/angla
 
 // 3 : To determinate the pieces and the colors
 let tabColor = ["white", "black"];
-let indexColor = 0;
 
 let whitePositions = [["WHITE_ROOK", "♖"], ["WHITE_KNIGHT", "♘"], ["WHITE_BISHOP", "♗"], ["WHITE_KING", "♔"], ["WHITE_QUEEN", "♕"],
 ["WHITE_BISHOP", "♗"], ["WHITE_KNIGHT", "♘"], ["WHITE_ROOK", "♖"], ["WHITE_PAWN", "♙"]];
@@ -35,15 +34,15 @@ let cell;
  * = 3 fois la meme boucle ?
  */
 
-if (boardLength == null && boardWidth == null) {
+if (boardLength == '' && boardWidth == '' || boardLength == undefined && boardWidth == undefined) {
     boardLength = 8;
     boardWidth = 8;
 
 } else {
-    if (boardLength == null) {
+    if (boardLength == '' || boardLength == undefined) {
         boardLength = 8;
 
-    } else if (boardWidth == null) {
+    } if (boardWidth == '' || boardWidth == undefined) {
         boardWidth = 8;
     }
 }

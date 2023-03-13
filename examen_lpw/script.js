@@ -20,13 +20,20 @@ let students = [
 let best = bestOfTheBest(students);
 
 function bestOfTheBest(students) {
+    let average;
+    let bestNote = 0;
+    let name = "";
     for (let i = 0; i < students.length; ++i) {
+        average = 0;
         for (let j = 0; j < students[i].notes.length; ++j) {
-
-            console.log(students[i].notes[j]);
-
+            average += students[i].notes[j];
         }
+        average = average / students[i].notes.length;
 
+        if(bestNote < average){
+            bestNote = average;
+            name = students[i].nom;
+        }
     }
-
+    console.log(name);
 }

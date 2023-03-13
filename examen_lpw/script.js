@@ -3,7 +3,7 @@ let n = [18, 35, 82, 12, 51, 94, 35, 21, 11, 44, 19, 6, 70, 54, 7, 48, 16, 22, 2
 let answer = n.filter(num => num % 2 == 0).reduce((a, b) => { return a + b }, 0);
 console.log(answer);
 
-/*1.2 Retourner le nom de l'étudiant avec la meilleur note */
+/* 1.2 Retourner le nom de l'étudiant avec la meilleur note */
 let students = [
     { matricule: "001", nom: "Zoltar", age: 21, notes: [12, 15, 18] },
     { matricule: "002", nom: "Balthazar", age: 22, notes: [10, 13, 16] },
@@ -38,7 +38,7 @@ function bestOfTheBest(students) {
     console.log(name);
 }
 
-/* 1.3 Retourner une phrase*/
+/* 1.3 Retourner une phrase */
 let sentence = "Bonjour tout le monde";
 let words = sentence.split(" ");
 let reverse = "";

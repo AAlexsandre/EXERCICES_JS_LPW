@@ -30,10 +30,22 @@ function bestOfTheBest(students) {
         }
         average = average / students[i].notes.length;
 
-        if(bestNote < average){
+        if (bestNote < average) {
             bestNote = average;
             name = students[i].nom;
         }
     }
     console.log(name);
 }
+
+/* 1.3 Retourner une phrase*/
+let sentence = "Bonjour tout le monde";
+let words = sentence.split(" ");
+let reverse = "";
+
+for (let i = words.length - 1; i >= 0; --i) {
+    reverse += words[i] + " ";
+}
+
+console.log(sentence);
+console.log(reverse);
